@@ -2,6 +2,12 @@ import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
 import {SoundComponent} from "./sound/sound.component";
 
+const homeRoutes: Routes =[
+  {path: '',
+  redirectTo: 'sound',
+  pathMatch: 'full'
+  }
+];
 const soundRoutes: Routes = [
   {
     path: 'sound',
@@ -10,6 +16,7 @@ const soundRoutes: Routes = [
   }
 ];
 const appRoutes: Routes = [
+  ...homeRoutes,
   ...soundRoutes
 ];
 

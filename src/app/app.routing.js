@@ -1,6 +1,12 @@
 "use strict";
 var router_1 = require("@angular/router");
 var sound_component_1 = require("./sound/sound.component");
+var homeRoutes = [
+    { path: '',
+        redirectTo: 'sound',
+        pathMatch: 'full'
+    }
+];
 var soundRoutes = [
     {
         path: 'sound',
@@ -8,7 +14,7 @@ var soundRoutes = [
         pathMatch: 'full'
     }
 ];
-var appRoutes = soundRoutes.slice();
+var appRoutes = homeRoutes.concat(soundRoutes);
 exports.appRoutingProviders = [];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map
