@@ -2,8 +2,9 @@
 var router_1 = require("@angular/router");
 var sound_component_1 = require("./sound/sound.component");
 var homeRoutes = [
-    { path: '',
-        redirectTo: 'sound',
+    {
+        path: '',
+        redirectTo: 'app',
         pathMatch: 'full'
     }
 ];

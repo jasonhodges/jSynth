@@ -3,9 +3,10 @@ import {ModuleWithProviders} from "@angular/core";
 import {SoundComponent} from "./sound/sound.component";
 
 const homeRoutes: Routes =[
-  {path: '',
-  redirectTo: 'sound',
-  pathMatch: 'full'
+  {
+    path: '',
+    redirectTo: 'app',
+    pathMatch: 'full'
   }
 ];
 const soundRoutes: Routes = [
