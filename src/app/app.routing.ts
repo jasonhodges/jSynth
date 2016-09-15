@@ -12,8 +12,7 @@ const homeRoutes: Routes =[
 const soundRoutes: Routes = [
   {
     path: 'sound',
-    component: SoundComponent,
-    pathMatch: 'full'
+    component: SoundComponent
   }
 ];
 const appRoutes: Routes = [

@@ -12,7 +12,7 @@ var NoteService = (function () {
         this.http = http;
     }
     NoteService.prototype.getNotes = function () {
-        return this.http.get('../../app/sound/notes.json')
+        return this.http.get('../../app/sound/note/notes.json')
             .map(function (res) { return res.json(); });
     };
     NoteService = __decorate([

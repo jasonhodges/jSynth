@@ -11,8 +11,7 @@ var homeRoutes = [
 var soundRoutes = [
     {
         path: 'sound',
-        component: sound_component_1.SoundComponent,
-        pathMatch: 'full'
+        component: sound_component_1.SoundComponent
     }
 ];
 var appRoutes = homeRoutes.concat(soundRoutes);

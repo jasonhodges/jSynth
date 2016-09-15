@@ -8,7 +8,7 @@ export class NoteService {
   constructor(private http: Http) { }
 
   getNotes() {
-    return this.http.get('../../app/sound/notes.json')
+    return this.http.get('../../app/sound/note/notes.json')
       .map((res: Response) => res.json());
   }
 }
