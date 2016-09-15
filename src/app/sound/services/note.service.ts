@@ -1,0 +1,14 @@
+import { Injectable } from '@angular/core';
+import {Http, Response} from '@angular/http';
+import 'rxjs/add/operator/map';
+
+@Injectable()
+export class NoteService {
+
+  constructor(private http: Http) { }
+
+  getNotes() {
+    return this.http.get('../../app/sound/notes.json')
+      .map((res: Response) => res.json());
+  }
+}
