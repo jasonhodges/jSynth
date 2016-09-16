@@ -1,7 +1,6 @@
 "use strict";
 var router_1 = require("@angular/router");
 var sound_component_1 = require("./sound/sound.component");
-var note_service_1 = require("./sound/services/note.service");
 var homeRoutes = [
     {
         path: '',
@@ -13,11 +12,6 @@ var soundRoutes = [
     {
         path: 'sound',
         component: sound_component_1.SoundComponent
-    },
-    {
-        path: 'sound/note/notes.json',
-        component: note_service_1.NoteService,
-        pathMatch: 'full'
     }
 ];
 var appRoutes = homeRoutes.concat(soundRoutes);

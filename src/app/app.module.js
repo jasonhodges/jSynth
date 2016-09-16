@@ -15,6 +15,8 @@ var note_component_1 = require('./sound/note/note.component');
 var audio_service_1 = require("./sound/services/audio.service");
 var app_routing_1 = require("./app.routing");
 var sound_component_1 = require('./sound/sound.component');
+var core_2 = require('@angular2-material/core');
+var button_toggle_1 = require('@angular2-material/button-toggle');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,7 +32,9 @@ var AppModule = (function () {
                 app_routing_1.routing,
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                http_1.HttpModule
+                http_1.HttpModule,
+                core_2.MdCoreModule.forRoot(),
+                button_toggle_1.MdButtonToggleModule.forRoot()
             ],
             providers: [
                 app_routing_1.appRoutingProviders,

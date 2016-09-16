@@ -2,6 +2,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
 import {SoundComponent} from "./sound/sound.component";
 import {NoteService} from "./sound/services/note.service";
+import {AppComponent} from "./app.component";
 
 const homeRoutes: Routes =[
   {
@@ -14,11 +15,6 @@ const soundRoutes: Routes = [
   {
     path: 'sound',
     component: SoundComponent
-  },
-  {
-    path: 'sound/note/notes.json',
-    component: NoteService,
-    pathMatch: 'full'
   }
 ];
 const appRoutes: Routes = [

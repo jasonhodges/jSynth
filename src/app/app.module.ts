@@ -9,6 +9,8 @@ import { NoteComponent } from './sound/note/note.component';
 import {AudioService} from "./sound/services/audio.service";
 import {routing, appRoutingProviders} from "./app.routing";
 import { SoundComponent } from './sound/sound.component';
+import {MdCoreModule} from '@angular2-material/core';
+import {MdButtonToggleModule} from '@angular2-material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SoundComponent } from './sound/sound.component';
     routing,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MdCoreModule.forRoot(),
+    MdButtonToggleModule.forRoot()
   ],
   providers: [
     appRoutingProviders,

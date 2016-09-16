@@ -13,14 +13,17 @@ export class SynthService {
   initialFreq = 2000;
   initialVol = 1;
 
+  private waveform;
+
   constructor() {
     this.masterGain.connect(this.audioContext.destination);
   }
 
-  play(freq, time) {
+  play(freq, time, waveform) {
+
     this.oscillator = this.audioContext.createOscillator();
     this.oscillator.frequency.value = freq;
-    this.oscillator.type = 'square';
+    this.oscillator.type = waveform;
     this.oscillator.connect(this.audioContext.destination);
 
     if (time == null){
@@ -28,7 +31,7 @@ export class SynthService {
       time = this.date;
     }
     // this.gain.gain.value = this.initialVol;
-    console.log('synth play: '+ freq + ', ' + time);
+    console.log('synth play: '+ freq + ', ' + time + waveform);
     this.oscillator.start(0);
   }
 

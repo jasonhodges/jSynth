@@ -15,6 +15,7 @@ var BoardComponent = (function () {
         this.audioService = audioService;
         this.noteService = noteService;
         this.synthService = synthService;
+        this.waveform = 'square';
         this.audioContext = this.audioService.audioContext;
         this.noteToFrequency = function (note) {
             return Math.pow(2, (note - 69) / 12) * 440.0;
@@ -25,12 +26,16 @@ var BoardComponent = (function () {
         this.noteService.getNotes()
             .subscribe(function (notes) { return _this.notes = notes; });
     };
+    BoardComponent.prototype.switchWaveform = function (waveform) {
+        console.log('waveform: ', waveform);
+        this.waveform = waveform;
+    };
     BoardComponent.prototype.play = function (note) {
         var freq = this.noteToFrequency(note.num).toFixed(3);
         this.value = freq;
         this.date = new Date();
         this.time = this.date;
-        this.synthService.play(freq, this.time);
+        this.synthService.play(freq, this.time, this.waveform);
     };
     BoardComponent.prototype.release = function (note) {
         //var freq = this.noteToFrequency(note.num).toFixed(3);
@@ -50,7 +55,12 @@ var BoardComponent = (function () {
             selector: 'synth-board',
             templateUrl: './board.component.html',
             styleUrls: ['./board.component.css'],
-            providers: [audio_service_1.AudioService, AudioContext, note_service_1.NoteService, synth_service_1.SynthService]
+            providers: [
+                audio_service_1.AudioService,
+                AudioContext,
+                note_service_1.NoteService,
+                synth_service_1.SynthService
+            ]
         })
     ], BoardComponent);
     return BoardComponent;

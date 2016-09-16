@@ -14,17 +14,17 @@ var SynthService = (function () {
         this.initialVol = 1;
         this.masterGain.connect(this.audioContext.destination);
     }
-    SynthService.prototype.play = function (freq, time) {
+    SynthService.prototype.play = function (freq, time, waveform) {
         this.oscillator = this.audioContext.createOscillator();
         this.oscillator.frequency.value = freq;
-        this.oscillator.type = 'square';
+        this.oscillator.type = waveform;
         this.oscillator.connect(this.audioContext.destination);
         if (time == null) {
             this.date = new Date();
             time = this.date;
         }
         // this.gain.gain.value = this.initialVol;
-        console.log('synth play: ' + freq + ', ' + time);
+        console.log('synth play: ' + freq + ', ' + time + waveform);
         this.oscillator.start(0);
     };
     SynthService.prototype.stop = function (freq, time) {
