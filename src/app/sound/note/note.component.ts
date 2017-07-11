@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Note} from './note';
-import {Input} from '@angular/core/src/metadata/directives';
-import {SynthService} from "../services/synth.service";
-import {NoteService} from "../services/note.service";
+import { Component, Input } from '@angular/core';
+import { Note } from './note';
+import { SynthService } from '../services/synth.service';
+import { NoteService } from '../services/note.service';
 
 @Component({
   selector: 'note',

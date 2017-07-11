@@ -1,4 +1,5 @@
-export class Note {
-  key: string;
-  num: number;
+export interface Note {
+  key?: string;
+  num?: number;
+  col?: string;
 }

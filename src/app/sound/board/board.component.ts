@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {NoteService} from '../services/note.service';
-import {AudioService} from '../services/audio.service';
-import {SynthService} from '../services/synth.service';
-import {HostListener} from '@angular/core/src/metadata/directives';
-import {Note} from "../note/note";
+import { Component, HostListener, OnInit } from '@angular/core';
+import { NoteService } from '../services/note.service';
+import { AudioService } from '../services/audio.service';
+import { SynthService } from '../services/synth.service';
+import { Note } from '../note/note';
 
 
 @Component({
@@ -19,7 +18,8 @@ import {Note} from "../note/note";
 })
 
 export class BoardComponent implements OnInit {
-  notes: Note[];
+  notes: Note = {};
+  audioContext = this.audioService.audioContext;
   private date;
   private time;
   private value: string;
@@ -29,11 +29,11 @@ export class BoardComponent implements OnInit {
   private noteService: NoteService,
   private synthService: SynthService) { }
 
-  audioContext = this.audioService.audioContext;
 
   ngOnInit() {
     this.noteService.getNotes()
       .subscribe(notes => this.notes = notes);
+    console.log('notes: ', this.notes)
   }
 
   switchWaveform(waveform: string){

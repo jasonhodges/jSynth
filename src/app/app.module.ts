@@ -1,37 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdButtonToggleModule } from '@angular/material';
+import { routing, appRoutingProviders } from './app.routes';
 import { AppComponent } from './app.component';
-import { BoardComponent } from './sound/board/board.component';
-import { NoteComponent } from './sound/note/note.component';
-import {AudioService} from "./sound/services/audio.service";
-import {routing, appRoutingProviders} from "./app.routing";
-import { SoundComponent } from './sound/sound.component';
-import {MdCoreModule} from '@angular2-material/core';
-import {MdButtonToggleModule} from '@angular2-material/button-toggle';
+import { HomeComponent } from './home/home.component';
+import { WidgetTwoComponent } from './widgets/widget-two.component';
+import { WidgetOneComponent } from './widgets/widget-one.component';
+import SoundModule from './sound/sound.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BoardComponent,
-    NoteComponent,
-    SoundComponent
+    AppComponent, WidgetOneComponent, WidgetTwoComponent, HomeComponent
   ],
   imports: [
-    routing,
     BrowserModule,
-    FormsModule,
+    BrowserAnimationsModule,
+    routing,
     HttpModule,
-    MdCoreModule.forRoot(),
-    MdButtonToggleModule.forRoot()
+    MdButtonModule,
+    // Button toggle and checkbox can't work due to https://github.com/angular/angular/issues/17050
+    // MdButtonToggleModule,
+    SoundModule
   ],
-  providers: [
-    appRoutingProviders,
-    AudioService
-
+  exports: [
+    MdButtonModule
   ],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

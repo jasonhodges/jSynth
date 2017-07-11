@@ -1,7 +1,10 @@
 <h1>
   {{title}}
 </h1>
-<md-button-toggle routerLink="" routerLinkActive="active">MAIN</md-button-toggle>
-
-<md-button-toggle routerLink="/sound" routerLinkActive="active">SOUND</md-button-toggle>
+<nav>
+  <!--<md-button-toggle-group>-->
+    <button md-button routerLink="">MAIN</button>
+    <button md-button routerLink="sound">SOUND</button>
+  <!--</md-button-toggle-group>-->
+</nav>
 <router-outlet></router-outlet>
